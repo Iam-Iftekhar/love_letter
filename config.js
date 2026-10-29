@@ -13,7 +13,7 @@ const CONFIG = {
   // Message shown after she presses YES
   winTitle: "I KNEW IT! Happy 4 Month Anniversary, my love 💖",
   winText:
-    "One year down, forever to go. Thank you for being my favourite person, " +
+    "Four months down, forever to go. Thank you for being my favourite person, " +
     "my best bug-free feature, and the reason my life compiles without errors. " +
     "I love you.  — Your CSE boy",
 };
