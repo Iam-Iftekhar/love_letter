@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>A little surprise 💌</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body class="home">
+
+  <!-- ============ PAGE 1: the arrow game ============ -->
+  <div id="homeView">
+
+    <header>
+      <h1>HERE'S A LITTLE SURPRISE FOR YOU &lt;3</h1>
+    </header>
+
+    <main class="stage" id="stage">
+
+      <!-- The love letter = the target / trigger -->
+      <div class="letter-wrap">
+        <div class="letter" id="letter">
+          <span class="seal">❤</span>
+          <span class="to">For You 💌</span>
+        </div>
+      </div>
+
+      <!-- Bow, string, aim guide and arrow are all drawn here by home.js -->
+      <svg id="scene" aria-label="Bow and arrow">
+        <path id="bow" class="bow" fill="none"/>
+        <polyline id="string" class="string" fill="none"/>
+        <g id="guide"></g>
+        <g id="arrow">
+          <line class="shaft" x1="0" y1="0" x2="0" y2="-96"/>
+          <polygon class="vane" points="0,0 -9,-4 -9,-20 0,-12"/>
+          <polygon class="vane" points="0,0 9,-4 9,-20 0,-12"/>
+          <polygon class="head" points="0,-108 -8,-92 8,-92"/>
+        </g>
+      </svg>
+    </main>
+
+    <p class="hint" id="hint">Pull the arrow down, aim at the letter, then let go 💘</p>
+  </div>
+
+  <!-- ============ PAGE 2: the cards (opens when the arrow hits the letter) ============ -->
+  <div id="cardView" class="hidden">
+
+    <main class="cards" id="cards">
+
+      <!-- CARD 1 -->
+      <section class="card" id="card1">
+        <h2 class="card-title">DO YOU STILL LOVE ME?</h2>
+
+        <div class="photo" data-img="image1">
+          <img alt="Us">
+          <span class="ph">Your photo goes here<br><small>(set image1 in config.js)</small></span>
+        </div>
+
+        <div class="actions">
+          <button class="btn yes" id="yes">YES</button>
+          <button class="btn no" id="no">NO</button>
+        </div>
+      </section>
+
+      <!-- CARD 2 (appears after the NO button vanishes) -->
+      <section class="card hidden" id="card2">
+        <h2 class="card-title">you have no other option left.</h2>
+
+        <div class="photo" data-img="image2">
+          <img alt="No other option">
+          <span class="ph">Your photo goes here<br><small>(set image2 in config.js)</small></span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Shown when she finally says YES -->
+    <div class="overlay hidden" id="win">
+      <div class="win-box">
+        <div class="big">💖</div>
+        <h2 id="winTitle"></h2>
+        <p id="winText"></p>
+        <button class="btn yes" id="again">Replay 🏹</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ?v=5 forces the browser to load the newest files instead of cached old ones -->
+  <script src="config.js?v=5"></script>
+  <script src="home.js?v=5"></script>
+  <script src="card.js?v=5"></script>
+</body>
+</html>
